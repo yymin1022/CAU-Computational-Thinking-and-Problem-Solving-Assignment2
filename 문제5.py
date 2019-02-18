@@ -19,7 +19,7 @@ while 1:
         if not line: break
         if line.split()[0] == inputWord:
             existWord = True
-            if line.split()[2][0] == "n":
+            if line.split(":")[1].find("n.") != -1:
                 isNoun = True
     dataFile.close()
 
