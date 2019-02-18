@@ -2,6 +2,7 @@ import random
 
 lottoList = []
 lottoCount = []
+lottoCountSort = []
 lottoMax = [0, 0, 0, 0, 0, 0]
 
 def lotto_generator():
@@ -19,16 +20,17 @@ for i in range(45):
 
 for j in range(1000):
     lotto_generator()
-    
-''' 이 부분은 문제가 많으니 다시 짤 것
+
+print(lottoCount)
+
 for k in range(6):
     for l in range(45):
         if k == 0:
-            if lottoCount[lottoMax[k] - 1] < lottoCount[l]:
+            if lottoCount[l] > lottoCount[lottoMax[k] - 1]:
                 lottoMax[k] = l + 1
         else:
-            if lottoCount[lottoMax[k] - 1] < lottoCount[l] and lottoCount[l] < lottoCount[lottoMax[k - 1] - 1]:
-                lottoMax[k] = l + 1
+            if lottoCount[l] > lottoCount[lottoMax[k] - 1] and lottoCount[l] <= lottoCount[lottoMax[k - 1] - 1]:
+               if (l + 1) not in lottoMax:
+                    lottoMax[k] = l + 1
 
-'''
 print(lottoMax)
