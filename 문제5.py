@@ -54,14 +54,20 @@ while 1:
     elif len(inputWord) < 5:
         print("단어가 짧아요.")
         continue
-    elif inputWord[0] != lastWord[-1]:
-        print("입력한 단어의 첫 글자가 이전 단어의 끝 글자와 다릅니다.")
-        continue
 
+    isUsed = False
     for i in lastWordList:
         if inputWord == i:
-            print("이미 입력한 단어입니다.")
+            isUsed = True
             continue
+
+    if isUsed:
+         print("이미 입력한 단어입니다.")
+         continue
+
+    if inputWord[0] != lastWord[-1]:
+        print("입력한 단어의 첫 글자가 이전 단어의 끝 글자와 다릅니다.")
+        continue
         
     dataFile = open("dict_test.TXT", "r")
     existWord = False

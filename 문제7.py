@@ -22,4 +22,4 @@ for c in inputSusic :
     else:
         pass
 
-print("결과는 %d"%val)
+print("결과는 %d"%result)

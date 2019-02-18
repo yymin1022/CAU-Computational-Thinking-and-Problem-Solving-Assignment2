@@ -16,7 +16,7 @@
         # 해당하는 단어의 뜻 부분을 출력함
         lineWord = line.split(":")[0].rstrip()
         if lineWord == inputWord:
-            print(line.split(":")[1].lstrip())
+            print(line.replace(" : ", " "))
             existWord = True
     dictFile.close()
     if existWord != True:
